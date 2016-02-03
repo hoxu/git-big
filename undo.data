@@ -4,3 +4,6 @@ new [description:"use git hash-object -w <file> to write the file to object stor
 time 1454529633
 new [description:"compute sha256 of the file, move to .git\/gig\/objects and symlink, add symlink under git" entry:"1454529633" status:"pending" uuid:"a524559a-dc8e-4670-bf83-7cf0f4b55468"]
 ---
+time 1454529687
+new [description:"command to push gig files to origin refs\/gig\/sha256" entry:"1454529687" status:"pending" uuid:"4022a365-cd11-4e6f-b157-bea198f7a1b3"]
+---
