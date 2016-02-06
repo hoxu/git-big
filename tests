@@ -6,9 +6,9 @@ binary=$(readlink -f "./gig")
 setUp()
 {
     REPO=$(mktemp -d)
-    git init "$REPO"
+    git init -q "$REPO"
     REMOTE=$(mktemp -d)
-    git init --bare "$REMOTE"
+    git init -q --bare "$REMOTE"
     cd "$REPO"
 }
 
