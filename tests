@@ -24,7 +24,7 @@ testAddFile()
     $binary add file.txt
     sha256=$(sha256sum file.txt |awk '{print $1}')
 
-    git show $(git hash-object --stdin < file.txt) || fail "git object does not exist"
+    git show $(git hash-object --stdin < file.txt) > /dev/null || fail "git object does not exist"
 
     [ -f "$(git rev-parse --git-dir)/gig/objects/$sha256" ] || fail "gig object does not exist"
 
