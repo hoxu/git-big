@@ -7,8 +7,14 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
+OBJECT_STORE="$(git rev-parse --git-dir)/gig/objects"
+
 if [ "$1" = "add" ]; then
     git hash-object -w "$2" > /dev/null
+    sha256=$(sha256sum "$2" |awk '{print $1}')
+
+    mkdir -p "$OBJECT_STORE"
+    cp "$2" "$OBJECT_STORE/$sha256"
 else
     echo "Unknown command: $1" >&2
     exit 1
