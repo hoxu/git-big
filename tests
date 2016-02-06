@@ -1,0 +1,31 @@
+#!/bin/sh
+set -u
+
+binary=$(readlink -f "./gig")
+
+setUp()
+{
+    REPO=$(mktemp -d)
+    git init "$REPO"
+    REMOTE=$(mktemp -d)
+    git init --bare "$REMOTE"
+    cd "$REPO"
+}
+
+tearDown()
+{
+    cd -
+    rm -rf "$REPO" "$REMOTE"
+}
+
+testAddFile()
+{
+    echo foo > file.txt
+    $binary add file.txt
+    # TODO calculate sha256
+    git show $(git hash-object --stdin < file.txt) || fail "git object does not exist"
+    [ -L file.txt ] || fail "file must be a symlink"
+    # TODO test that file is symlink to GIT_DIR/gig/objects/<sha256>
+}
+
+. shunit2

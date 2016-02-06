@@ -1,0 +1,14 @@
+#!/bin/sh
+# Copyright (c) 2016 Heikki Hokkanen <hoxu at users.sf.net>
+
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 <command> [parameters]"
+    exit 1
+fi
+
+if [ "$1" = "add" ]; then
+    git hash-object -w "$2" > /dev/null
+else
+    echo "Unknown command: $1" >&2
+    exit 1
+fi
