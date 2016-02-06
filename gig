@@ -1,5 +1,6 @@
 #!/bin/sh
 # Copyright (c) 2016 Heikki Hokkanen <hoxu at users.sf.net>
+set -e
 
 if [ $# -eq 0 ]; then
     echo "Usage: $0 <command> [parameters]"
