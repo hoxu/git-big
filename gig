@@ -10,8 +10,9 @@ fi
 OBJECT_STORE="$(git rev-parse --git-dir)/gig/objects"
 
 if [ "$1" = "add" ]; then
-    git hash-object -w "$2" > /dev/null
+    sha1=$(git hash-object -w "$2")
     sha256=$(sha256sum "$2" |awk '{print $1}')
+    git update-ref refs/gig/$sha256 $sha1
 
     mkdir -p "$OBJECT_STORE"
     cp "$2" "$OBJECT_STORE/$sha256"
