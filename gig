@@ -18,6 +18,13 @@ if [ "$1" = "add" ]; then
     cp "$2" "$OBJECT_STORE/$sha256"
     rm -f "$2"
     ln -s "$OBJECT_STORE/$sha256" "$2"
+elif [ "$1" = "push" ]; then
+    file="$2"
+    [ -L "$file" ] || (echo "Can only push gig files"; exit 1)
+
+    sha256=$(basename $(readlink "$file"))
+
+    git push origin refs/gig/$sha256:refs/gig/$sha256
 else
     echo "Unknown command: $1" >&2
     exit 1

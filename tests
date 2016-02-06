@@ -10,6 +10,7 @@ setUp()
     REMOTE=$(mktemp -d)
     git init -q --bare "$REMOTE"
     cd "$REPO"
+    git remote add origin "$REMOTE"
 }
 
 tearDown()
@@ -32,6 +33,21 @@ testAddFile()
 
     [ -L file.txt ] || fail "file must be a symlink"
     assertEquals "$(readlink file.txt)" ".git/gig/objects/$sha256"
+}
+
+testPushFile()
+{
+    echo foo > file.txt
+    sha256=$(sha256sum file.txt |awk '{print $1}')
+    $binary add file.txt
+    $binary push file.txt
+
+    sha1=$(cat $(git rev-parse --git-dir)/refs/gig/$sha256)
+
+    [ -f "$REMOTE/refs/gig/$sha256" ] || fail "Remote ref does not exist"
+
+    sha1remote=$(cat $REMOTE/refs/gig/$sha256)
+    assertEquals "$sha1" "$sha1remote"
 }
 
 . shunit2
