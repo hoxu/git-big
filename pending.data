@@ -3,3 +3,4 @@
 [description:"fetch <dir> - find all gig symlinks and push each" entry:"1454836734" status:"pending" uuid:"69bf185f-13ae-447d-bbf3-b6ac9955859b"]
 [description:"push --all - push all refs in refs\/gig" entry:"1454836754" status:"pending" uuid:"d95837c8-ea7f-44e7-a7d9-61eaf49134bc"]
 [description:"fetch --all - fetch all refs in refs\/gig" entry:"1454836764" modified:"1454836772" status:"pending" uuid:"ba2b70a7-8ddb-4f9c-96fc-9f29848c72eb"]
+[description:"fsck" entry:"1454836790" status:"pending" uuid:"213e4ab4-ff30-4181-83e9-bec138b2db2f"]

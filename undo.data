@@ -38,3 +38,6 @@ time 1454836772
 old [description:"fetch --all - push all refs in refs\/gig" entry:"1454836764" status:"pending" uuid:"ba2b70a7-8ddb-4f9c-96fc-9f29848c72eb"]
 new [description:"fetch --all - fetch all refs in refs\/gig" entry:"1454836764" modified:"1454836772" status:"pending" uuid:"ba2b70a7-8ddb-4f9c-96fc-9f29848c72eb"]
 ---
+time 1454836790
+new [description:"fsck" entry:"1454836790" status:"pending" uuid:"213e4ab4-ff30-4181-83e9-bec138b2db2f"]
+---
