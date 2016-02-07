@@ -34,6 +34,8 @@ testAddFile()
 
     [ -L file.txt ] || fail "file must be a symlink"
     assertEquals "$(readlink file.txt)" ".git/gig/objects/$sha256"
+
+    git ls-files --error-unmatch file.txt >/dev/null 2>&1 || fail "file is not in index"
 }
 
 testPushFile()

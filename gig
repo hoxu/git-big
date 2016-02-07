@@ -18,6 +18,7 @@ if [ "$1" = "add" ]; then
     mv "$2" "$OBJECT_STORE/$sha256"
     chmod -w "$OBJECT_STORE/$sha256"
     ln -s "$OBJECT_STORE/$sha256" "$2"
+    git add "$2"
 elif [ "$1" = "push" ]; then
     file="$2"
     [ -L "$file" ] || (echo "Can only push gig files"; exit 1)
