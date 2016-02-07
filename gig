@@ -23,6 +23,13 @@ elif [ "$1" = "drop" ]; then
     sha256=$(basename $(readlink "$2"))
     rm -f "$OBJECT_STORE/$sha256"
     git update-ref -d refs/gig/$sha256
+elif [ "$1" = "fetch" ]; then
+    [ -L "$2" ] || (echo "Can only fetch gig files"; exit 1)
+    sha256=$(basename $(readlink "$2"))
+
+    git fetch origin refs/gig/$sha256:refs/gig/$sha256
+    git show refs/gig/$sha256 > "$OBJECT_STORE/$sha256"
+    chmod -w "$OBJECT_STORE/$sha256"
 elif [ "$1" = "push" ]; then
     file="$2"
     [ -L "$file" ] || (echo "Can only push gig files"; exit 1)
