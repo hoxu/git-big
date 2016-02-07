@@ -41,3 +41,7 @@ new [description:"fetch --all - fetch all refs in refs\/gig" entry:"1454836764" 
 time 1454836790
 new [description:"fsck" entry:"1454836790" status:"pending" uuid:"213e4ab4-ff30-4181-83e9-bec138b2db2f"]
 ---
+time 1454836866
+old [description:"unlock" entry:"1454836710" status:"pending" uuid:"4d378cb4-a67a-4221-97a2-3e0e1eb46467"]
+new [description:"unlock <file>" entry:"1454836710" modified:"1454836866" status:"pending" uuid:"4d378cb4-a67a-4221-97a2-3e0e1eb46467"]
+---

@@ -11,3 +11,4 @@
 {"description":"fetch --all - push all refs in refs\/gig","entry":"20160207T091924Z","status":"pending","uuid":"ba2b70a7-8ddb-4f9c-96fc-9f29848c72eb"}
 {"description":"fetch --all - fetch all refs in refs\/gig","entry":"20160207T091924Z","modified":"20160207T091932Z","status":"pending","uuid":"ba2b70a7-8ddb-4f9c-96fc-9f29848c72eb"}
 {"description":"fsck","entry":"20160207T091950Z","status":"pending","uuid":"213e4ab4-ff30-4181-83e9-bec138b2db2f"}
+{"description":"unlock <file>","entry":"20160207T091830Z","modified":"20160207T092106Z","status":"pending","uuid":"4d378cb4-a67a-4221-97a2-3e0e1eb46467"}
