@@ -79,4 +79,19 @@ testFetchFile()
     [ -w "$(git rev-parse --git-dir)/gig/objects/$sha256" ] && fail "gig object is writable"
 }
 
+testUnlockFile()
+{
+    echo foo > file.txt
+    sha256=$(sha256sum file.txt |awk '{print $1}')
+    $binary add file.txt
+    git commit -q -m 'add file'
+    $binary unlock file.txt
+
+    [ -L file.txt ] && fail "file is still a symlink"
+    sha256new=$(sha256sum file.txt |awk '{print $1}')
+    assertEquals "$sha256" "$sha256new"
+
+    [ -w file.txt ] || fail "Unlocked file is not writable"
+}
+
 . shunit2

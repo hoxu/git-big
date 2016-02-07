@@ -37,6 +37,13 @@ elif [ "$1" = "push" ]; then
     sha256=$(basename $(readlink "$file"))
 
     git push origin refs/gig/$sha256:refs/gig/$sha256
+elif [ "$1" = "unlock" ]; then
+    [ -L "$2" ] || (echo "Can only unlock gig files"; exit 1)
+
+    sha256=$(basename $(readlink "$2"))
+    rm -f "$2"
+    cp --reflink=auto --sparse=auto $OBJECT_STORE/$sha256 "$2"
+    chmod +w "$2"
 else
     echo "Unknown command: $1" >&2
     exit 1
