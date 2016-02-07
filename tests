@@ -53,4 +53,16 @@ testPushFile()
     assertEquals "$sha1" "$sha1remote"
 }
 
+testDropFile()
+{
+    echo foo > file.txt
+    sha256=$(sha256sum file.txt |awk '{print $1}')
+    $binary add file.txt
+    git commit -q -m 'add file'
+    $binary drop file.txt
+
+    [ -f "$(git rev-parse --git-dir)/gig/objects/$sha256" ] && fail "object exists after drop"
+    [ -f "$(git rev-parse --git-dir)/refs/gig/$sha256" ] && fail "ref exists after drop"
+}
+
 . shunit2
