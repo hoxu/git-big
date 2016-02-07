@@ -45,3 +45,6 @@ time 1454836866
 old [description:"unlock" entry:"1454836710" status:"pending" uuid:"4d378cb4-a67a-4221-97a2-3e0e1eb46467"]
 new [description:"unlock <file>" entry:"1454836710" modified:"1454836866" status:"pending" uuid:"4d378cb4-a67a-4221-97a2-3e0e1eb46467"]
 ---
+time 1454841779
+new [description:"always test symlink is actually gig symlink" entry:"1454841779" status:"pending" uuid:"53b3f0c0-c385-4be1-adce-0b414fc72556"]
+---
