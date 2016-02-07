@@ -7,3 +7,7 @@ new [description:"compute sha256 of the file, move to .git\/gig\/objects and sym
 time 1454529687
 new [description:"command to push gig files to origin refs\/gig\/sha256" entry:"1454529687" status:"pending" uuid:"4022a365-cd11-4e6f-b157-bea198f7a1b3"]
 ---
+time 1454836686
+old [description:"use git hash-object -w <file> to write the file to object store" entry:"1454529580" status:"pending" uuid:"40ef0160-7ba7-4fc3-a4cf-5795db3cb43f"]
+new [description:"use git hash-object -w <file> to write the file to object store" end:"1454836686" entry:"1454529580" modified:"1454836686" status:"completed" uuid:"40ef0160-7ba7-4fc3-a4cf-5795db3cb43f"]
+---
