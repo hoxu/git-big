@@ -11,3 +11,7 @@ time 1454836686
 old [description:"use git hash-object -w <file> to write the file to object store" entry:"1454529580" status:"pending" uuid:"40ef0160-7ba7-4fc3-a4cf-5795db3cb43f"]
 new [description:"use git hash-object -w <file> to write the file to object store" end:"1454836686" entry:"1454529580" modified:"1454836686" status:"completed" uuid:"40ef0160-7ba7-4fc3-a4cf-5795db3cb43f"]
 ---
+time 1454836692
+old [description:"compute sha256 of the file, move to .git\/gig\/objects and symlink, add symlink under git" entry:"1454529633" status:"pending" uuid:"a524559a-dc8e-4670-bf83-7cf0f4b55468"]
+new [description:"compute sha256 of the file, move to .git\/gig\/objects and symlink, add symlink under git" end:"1454836692" entry:"1454529633" modified:"1454836692" status:"completed" uuid:"a524559a-dc8e-4670-bf83-7cf0f4b55468"]
+---

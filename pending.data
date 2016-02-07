@@ -1,3 +1,3 @@
 [description:"use git hash-object -w <file> to write the file to object store" end:"1454836686" entry:"1454529580" modified:"1454836686" status:"completed" uuid:"40ef0160-7ba7-4fc3-a4cf-5795db3cb43f"]
-[description:"compute sha256 of the file, move to .git\/gig\/objects and symlink, add symlink under git" entry:"1454529633" status:"pending" uuid:"a524559a-dc8e-4670-bf83-7cf0f4b55468"]
+[description:"compute sha256 of the file, move to .git\/gig\/objects and symlink, add symlink under git" end:"1454836692" entry:"1454529633" modified:"1454836692" status:"completed" uuid:"a524559a-dc8e-4670-bf83-7cf0f4b55468"]
 [description:"command to push gig files to origin refs\/gig\/sha256" entry:"1454529687" status:"pending" uuid:"4022a365-cd11-4e6f-b157-bea198f7a1b3"]
