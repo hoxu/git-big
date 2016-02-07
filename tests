@@ -15,7 +15,7 @@ setUp()
 
 tearDown()
 {
-    cd -
+    cd - > /dev/null
     rm -rf "$REPO" "$REMOTE"
 }
 
