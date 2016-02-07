@@ -52,3 +52,7 @@ time 1454841970
 old [description:"unlock <file>" entry:"1454836710" modified:"1454836866" status:"pending" uuid:"4d378cb4-a67a-4221-97a2-3e0e1eb46467"]
 new [description:"unlock <file>" end:"1454841970" entry:"1454836710" modified:"1454841970" status:"completed" uuid:"4d378cb4-a67a-4221-97a2-3e0e1eb46467"]
 ---
+time 1454854243
+old [description:"push <dir> - find all gig symlinks and push each" entry:"1454836730" status:"pending" uuid:"94ab1be1-c089-4df0-8b8b-03e9c65b0737"]
+new [description:"push <dir> - find all gig symlinks and push each" end:"1454854243" entry:"1454836730" modified:"1454854243" status:"completed" uuid:"94ab1be1-c089-4df0-8b8b-03e9c65b0737"]
+---
