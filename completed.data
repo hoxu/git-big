@@ -1,3 +1,4 @@
+[description:"push <dir> - find all gig symlinks and push each" end:"1454854243" entry:"1454836730" modified:"1454854243" status:"completed" uuid:"94ab1be1-c089-4df0-8b8b-03e9c65b0737"]
 [description:"unlock <file>" end:"1454841970" entry:"1454836710" modified:"1454841970" status:"completed" uuid:"4d378cb4-a67a-4221-97a2-3e0e1eb46467"]
 [description:"use git hash-object -w <file> to write the file to object store" end:"1454836686" entry:"1454529580" modified:"1454836686" status:"completed" uuid:"40ef0160-7ba7-4fc3-a4cf-5795db3cb43f"]
 [description:"compute sha256 of the file, move to .git\/gig\/objects and symlink, add symlink under git" end:"1454836692" entry:"1454529633" modified:"1454836692" status:"completed" uuid:"a524559a-dc8e-4670-bf83-7cf0f4b55468"]
