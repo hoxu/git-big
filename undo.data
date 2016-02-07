@@ -19,3 +19,6 @@ time 1454836694
 old [description:"command to push gig files to origin refs\/gig\/sha256" entry:"1454529687" status:"pending" uuid:"4022a365-cd11-4e6f-b157-bea198f7a1b3"]
 new [description:"command to push gig files to origin refs\/gig\/sha256" end:"1454836694" entry:"1454529687" modified:"1454836694" status:"completed" uuid:"4022a365-cd11-4e6f-b157-bea198f7a1b3"]
 ---
+time 1454836710
+new [description:"unlock" entry:"1454836710" status:"pending" uuid:"4d378cb4-a67a-4221-97a2-3e0e1eb46467"]
+---
