@@ -15,9 +15,8 @@ if [ "$1" = "add" ]; then
     git update-ref refs/gig/$sha256 $sha1
 
     mkdir -p "$OBJECT_STORE"
-    cp "$2" "$OBJECT_STORE/$sha256"
+    mv "$2" "$OBJECT_STORE/$sha256"
     chmod -w "$OBJECT_STORE/$sha256"
-    rm -f "$2"
     ln -s "$OBJECT_STORE/$sha256" "$2"
 elif [ "$1" = "push" ]; then
     file="$2"
