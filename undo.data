@@ -28,3 +28,6 @@ new [description:"push <dir> - find all gig symlinks and push each" entry:"14548
 time 1454836734
 new [description:"fetch <dir> - find all gig symlinks and push each" entry:"1454836734" status:"pending" uuid:"69bf185f-13ae-447d-bbf3-b6ac9955859b"]
 ---
+time 1454836754
+new [description:"push --all - push all refs in refs\/gig" entry:"1454836754" status:"pending" uuid:"d95837c8-ea7f-44e7-a7d9-61eaf49134bc"]
+---
