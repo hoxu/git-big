@@ -53,6 +53,21 @@ testPushFile()
     assertEquals "$sha1" "$sha1remote"
 }
 
+testPushDir()
+{
+    echo foo > file.txt
+    sha256=$(sha256sum file.txt |awk '{print $1}')
+    $binary add file.txt
+    $binary push
+
+    sha1=$(cat $(git rev-parse --git-dir)/refs/gig/$sha256)
+
+    [ -f "$REMOTE/refs/gig/$sha256" ] || fail "Remote ref does not exist"
+
+    sha1remote=$(cat $REMOTE/refs/gig/$sha256)
+    assertEquals "$sha1" "$sha1remote"
+}
+
 testDropFile()
 {
     echo foo > file.txt

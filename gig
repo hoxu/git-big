@@ -9,6 +9,24 @@ fi
 
 OBJECT_STORE="$(git rev-parse --git-dir)/gig/objects"
 
+push_file()
+{
+    [ -L "$1" ] || (echo "$0: not object link: $1"; exit 1)
+
+    local sha256
+    sha256=$(basename $(readlink "$1"))
+
+    git push origin refs/gig/$sha256:refs/gig/$sha256
+}
+
+push_dir()
+{
+    local dir="$1"
+    find "$dir" -lname '*.git/gig/objects/*' |while read -r filename; do
+        push_file "$filename"
+    done
+}
+
 if [ "$1" = "add" ]; then
     sha1=$(git hash-object -w "$2")
     sha256=$(sha256sum "$2" |awk '{print $1}')
@@ -31,12 +49,17 @@ elif [ "$1" = "fetch" ]; then
     git show refs/gig/$sha256 > "$OBJECT_STORE/$sha256"
     chmod -w "$OBJECT_STORE/$sha256"
 elif [ "$1" = "push" ]; then
-    file="$2"
-    [ -L "$file" ] || (echo "Can only push gig files"; exit 1)
-
-    sha256=$(basename $(readlink "$file"))
-
-    git push origin refs/gig/$sha256:refs/gig/$sha256
+    shift
+    for i in "${@:-.}"; do
+        if [ -f "$i" ]; then
+            push_file "$i"
+        elif [ -d "$i" ]; then
+            push_dir "$i"
+        else
+            echo "$0: can not push: $i"
+            exit 1
+        fi
+    done
 elif [ "$1" = "unlock" ]; then
     [ -L "$2" ] || (echo "Can only unlock gig files"; exit 1)
 
