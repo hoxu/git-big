@@ -3,3 +3,4 @@
 {"description":"command to push gig files to origin refs\/gig\/sha256","entry":"20160203T200127Z","status":"pending","uuid":"4022a365-cd11-4e6f-b157-bea198f7a1b3"}
 {"description":"use git hash-object -w <file> to write the file to object store","end":"20160207T091806Z","entry":"20160203T195940Z","modified":"20160207T091806Z","status":"completed","uuid":"40ef0160-7ba7-4fc3-a4cf-5795db3cb43f"}
 {"description":"compute sha256 of the file, move to .git\/gig\/objects and symlink, add symlink under git","end":"20160207T091812Z","entry":"20160203T200033Z","modified":"20160207T091812Z","status":"completed","uuid":"a524559a-dc8e-4670-bf83-7cf0f4b55468"}
+{"description":"command to push gig files to origin refs\/gig\/sha256","end":"20160207T091814Z","entry":"20160203T200127Z","modified":"20160207T091814Z","status":"completed","uuid":"4022a365-cd11-4e6f-b157-bea198f7a1b3"}
