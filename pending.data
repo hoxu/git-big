@@ -2,3 +2,4 @@
 [description:"fetch --all - fetch all refs in refs\/gig" entry:"1454836764" modified:"1454836772" status:"pending" uuid:"ba2b70a7-8ddb-4f9c-96fc-9f29848c72eb"]
 [description:"fsck" entry:"1454836790" status:"pending" uuid:"213e4ab4-ff30-4181-83e9-bec138b2db2f"]
 [description:"always test symlink is actually gig symlink" entry:"1454841779" status:"pending" uuid:"53b3f0c0-c385-4be1-adce-0b414fc72556"]
+[description:"mv support like in git annex" entry:"1454958551" status:"pending" uuid:"fef57a49-37b0-4336-b0e6-a324910b362e"]

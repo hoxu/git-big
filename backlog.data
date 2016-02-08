@@ -16,3 +16,4 @@
 {"description":"unlock <file>","end":"20160207T104610Z","entry":"20160207T091830Z","modified":"20160207T104610Z","status":"completed","uuid":"4d378cb4-a67a-4221-97a2-3e0e1eb46467"}
 {"description":"push <dir> - find all gig symlinks and push each","end":"20160207T141043Z","entry":"20160207T091850Z","modified":"20160207T141043Z","status":"completed","uuid":"94ab1be1-c089-4df0-8b8b-03e9c65b0737"}
 {"description":"fetch <dir> - find all gig symlinks and push each","end":"20160208T182930Z","entry":"20160207T091854Z","modified":"20160208T182930Z","status":"completed","uuid":"69bf185f-13ae-447d-bbf3-b6ac9955859b"}
+{"description":"mv support like in git annex","entry":"20160208T190911Z","status":"pending","uuid":"fef57a49-37b0-4336-b0e6-a324910b362e"}

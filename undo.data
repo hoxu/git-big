@@ -60,3 +60,6 @@ time 1454956170
 old [description:"fetch <dir> - find all gig symlinks and push each" entry:"1454836734" status:"pending" uuid:"69bf185f-13ae-447d-bbf3-b6ac9955859b"]
 new [description:"fetch <dir> - find all gig symlinks and push each" end:"1454956170" entry:"1454836734" modified:"1454956170" status:"completed" uuid:"69bf185f-13ae-447d-bbf3-b6ac9955859b"]
 ---
+time 1454958551
+new [description:"mv support like in git annex" entry:"1454958551" status:"pending" uuid:"fef57a49-37b0-4336-b0e6-a324910b362e"]
+---
