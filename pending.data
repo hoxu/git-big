@@ -4,3 +4,4 @@
 [description:"always test symlink is actually gig symlink" entry:"1454841779" status:"pending" uuid:"53b3f0c0-c385-4be1-adce-0b414fc72556"]
 [description:"mv support like in git annex" entry:"1454958551" status:"pending" uuid:"fef57a49-37b0-4336-b0e6-a324910b362e"]
 [description:"license" entry:"1454959634" status:"pending" uuid:"4ad3a7fe-b89b-4fff-a5f7-ca60e0450ed8"]
+[description:"drop: refuse if does not exist on remote" entry:"1454960384" status:"pending" uuid:"b419db41-9cff-458a-a0e5-696cdf4f706c"]

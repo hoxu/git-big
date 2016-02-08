@@ -18,3 +18,4 @@
 {"description":"fetch <dir> - find all gig symlinks and push each","end":"20160208T182930Z","entry":"20160207T091854Z","modified":"20160208T182930Z","status":"completed","uuid":"69bf185f-13ae-447d-bbf3-b6ac9955859b"}
 {"description":"mv support like in git annex","entry":"20160208T190911Z","status":"pending","uuid":"fef57a49-37b0-4336-b0e6-a324910b362e"}
 {"description":"license","entry":"20160208T192714Z","status":"pending","uuid":"4ad3a7fe-b89b-4fff-a5f7-ca60e0450ed8"}
+{"description":"drop: refuse if does not exist on remote","entry":"20160208T193944Z","status":"pending","uuid":"b419db41-9cff-458a-a0e5-696cdf4f706c"}
