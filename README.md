@@ -45,3 +45,9 @@ Pros:
 
 Cons:
 * if you have lots of large files that need to exist in filesystem unfolded (eg. a music collection), gig uses twice the size. Consider git annex
+
+## Similar projects
+
+* [git-annex](http://git-annex.branchable.com/)
+* [git-fat](https://github.com/jedbrown/git-fat)
+* [git-media](https://github.com/alebedev/git-media)
