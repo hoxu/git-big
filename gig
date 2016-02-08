@@ -9,6 +9,24 @@ fi
 
 OBJECT_STORE="$(git rev-parse --git-dir)/gig/objects"
 
+fetch_file()
+{
+    [ -L "$1" ] || (echo "Can only fetch gig files"; exit 1)
+    local sha256
+    sha256=$(basename $(readlink "$1"))
+
+    git fetch origin refs/gig/$sha256:refs/gig/$sha256
+    git show refs/gig/$sha256 > "$OBJECT_STORE/$sha256"
+    chmod -w "$OBJECT_STORE/$sha256"
+}
+
+fetch_dir()
+{
+    find "$1" -lname '*.git/gig/objects*' |while read -r filename; do
+        fetch_file "$filename"
+    done
+}
+
 push_file()
 {
     [ -L "$1" ] || (echo "$0: not object link: $1"; exit 1)
@@ -42,12 +60,17 @@ elif [ "$1" = "drop" ]; then
     rm -f "$OBJECT_STORE/$sha256"
     git update-ref -d refs/gig/$sha256
 elif [ "$1" = "fetch" ]; then
-    [ -L "$2" ] || (echo "Can only fetch gig files"; exit 1)
-    sha256=$(basename $(readlink "$2"))
-
-    git fetch origin refs/gig/$sha256:refs/gig/$sha256
-    git show refs/gig/$sha256 > "$OBJECT_STORE/$sha256"
-    chmod -w "$OBJECT_STORE/$sha256"
+    shift
+    for i in "${@:-.}"; do
+        if [ -L "$i" ]; then
+            fetch_file "$i"
+        elif [ -d "$i" ]; then
+            fetch_dir "$i"
+        else
+            echo "$0: can not fetch: $i"
+            exit 1
+        fi
+    done
 elif [ "$1" = "push" ]; then
     shift
     for i in "${@:-.}"; do
