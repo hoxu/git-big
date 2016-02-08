@@ -7,7 +7,7 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
-OBJECT_STORE="$(git rev-parse --git-dir)/gig/objects"
+OBJECT_STORE="$(git rev-parse --git-dir)/big/objects"
 
 fetch_file()
 {
@@ -15,14 +15,14 @@ fetch_file()
     local sha256
     sha256=$(basename $(readlink "$1"))
 
-    git fetch origin refs/gig/$sha256:refs/gig/$sha256
-    git show refs/gig/$sha256 > "$OBJECT_STORE/$sha256"
+    git fetch origin refs/big/$sha256:refs/big/$sha256
+    git show refs/big/$sha256 > "$OBJECT_STORE/$sha256"
     chmod -w "$OBJECT_STORE/$sha256"
 }
 
 fetch_dir()
 {
-    find "$1" -lname '*.git/gig/objects*' |while read -r filename; do
+    find "$1" -lname '*.git/big/objects*' |while read -r filename; do
         fetch_file "$filename"
     done
 }
@@ -34,13 +34,13 @@ push_file()
     local sha256
     sha256=$(basename $(readlink "$1"))
 
-    git push origin refs/gig/$sha256:refs/gig/$sha256
+    git push origin refs/big/$sha256:refs/big/$sha256
 }
 
 push_dir()
 {
     local dir="$1"
-    find "$dir" -lname '*.git/gig/objects/*' |while read -r filename; do
+    find "$dir" -lname '*.git/big/objects/*' |while read -r filename; do
         push_file "$filename"
     done
 }
@@ -48,7 +48,7 @@ push_dir()
 if [ "$1" = "add" ]; then
     sha1=$(git hash-object -w "$2")
     sha256=$(sha256sum "$2" |awk '{print $1}')
-    git update-ref refs/gig/$sha256 $sha1
+    git update-ref refs/big/$sha256 $sha1
 
     mkdir -p "$OBJECT_STORE"
     mv "$2" "$OBJECT_STORE/$sha256"
@@ -58,7 +58,7 @@ if [ "$1" = "add" ]; then
 elif [ "$1" = "drop" ]; then
     sha256=$(basename $(readlink "$2"))
     rm -f "$OBJECT_STORE/$sha256"
-    git update-ref -d refs/gig/$sha256
+    git update-ref -d refs/big/$sha256
 elif [ "$1" = "fetch" ]; then
     shift
     for i in "${@:-.}"; do
