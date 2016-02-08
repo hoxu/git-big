@@ -63,3 +63,6 @@ new [description:"fetch <dir> - find all gig symlinks and push each" end:"145495
 time 1454958551
 new [description:"mv support like in git annex" entry:"1454958551" status:"pending" uuid:"fef57a49-37b0-4336-b0e6-a324910b362e"]
 ---
+time 1454959634
+new [description:"license" entry:"1454959634" status:"pending" uuid:"4ad3a7fe-b89b-4fff-a5f7-ca60e0450ed8"]
+---
