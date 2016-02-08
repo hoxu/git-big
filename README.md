@@ -7,20 +7,11 @@ Like git-annex but without requiring any extra software on the remote git reposi
 ## Synopsis
 
 ```
-git big add <file|path>   # sha256, hash-object -w, mv+ln
-git big fetch [file|path] # fetch given file or all files on path
-git big fetch --all       # fetch all files from remote refs/gig/, including old versions
-git big push [file|path]
-git big push --all        # push all files, including old versions
-git big unlock <file>     # change symlink back to file (for editing)
-git big lock <file>       # change file back to symlink (reverting changes?)
-git big drop <file>       # remove .git/gig/objects/sha256 and .git/refs/gig/sha256
-git big fold              # remove .git/gig/objects/sha256
-git big unfold            # create .git/gig/objects/sha256
-git big cull              # remove .git/refs/gig/sha256 if it exists on remote, --force to remove anyway
-git big sync              # fetch all files in HEAD, then push all files in HEAD
-git big sync --all        # ditto, but old versions as well
-git big detach <file>     # ??? remove .gig/refs/gig/sha256 ?
+git big add [file|dir]...   # add file to git-big
+git big fetch [file|dir]... # fetch files from remote
+git big push [file|dir]...  # push files to remote
+git big unlock <file>       # change symlink back to file (for editing)
+git big drop <file>         # remove local copy of file
 ```
 
 ## Storage
