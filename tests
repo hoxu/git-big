@@ -29,8 +29,8 @@ testAddFile()
 
     [ -f "$(git rev-parse --git-dir)/refs/big/$sha256" ] || fail "ref does not exist"
 
-    [ -f "$(git rev-parse --git-dir)/big/objects/$sha256" ] || fail "gig object does not exist"
-    [ -w "$(git rev-parse --git-dir)/big/objects/$sha256" ] && fail "gig object is writable"
+    [ -f "$(git rev-parse --git-dir)/big/objects/$sha256" ] || fail "object does not exist"
+    [ -w "$(git rev-parse --git-dir)/big/objects/$sha256" ] && fail "object is writable"
 
     [ -L file.txt ] || fail "file must be a symlink"
     assertEquals "$(readlink file.txt)" ".git/big/objects/$sha256"
@@ -90,8 +90,8 @@ testFetchFile()
     $binary fetch file.txt
 
     [ -f "$(git rev-parse --git-dir)/refs/big/$sha256" ] || fail "ref does not exist"
-    [ -f "$(git rev-parse --git-dir)/big/objects/$sha256" ] || fail "gig object does not exist"
-    [ -w "$(git rev-parse --git-dir)/big/objects/$sha256" ] && fail "gig object is writable"
+    [ -f "$(git rev-parse --git-dir)/big/objects/$sha256" ] || fail "object does not exist"
+    [ -w "$(git rev-parse --git-dir)/big/objects/$sha256" ] && fail "object is writable"
 }
 
 testFetchDir()
@@ -104,8 +104,8 @@ testFetchDir()
     $binary fetch
 
     [ -f "$(git rev-parse --git-dir)/refs/big/$sha256" ] || fail "ref does not exist"
-    [ -f "$(git rev-parse --git-dir)/big/objects/$sha256" ] || fail "gig object does not exist"
-    [ -w "$(git rev-parse --git-dir)/big/objects/$sha256" ] && fail "gig object is writable"
+    [ -f "$(git rev-parse --git-dir)/big/objects/$sha256" ] || fail "object does not exist"
+    [ -w "$(git rev-parse --git-dir)/big/objects/$sha256" ] && fail "object is writable"
 }
 
 testUnlockFile()

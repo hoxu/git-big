@@ -34,7 +34,7 @@ Pros:
 * no need for additional executables on the remote repository
 
 Cons:
-* if you have lots of large files that need to exist in filesystem unfolded (eg. a music collection), gig uses twice the size. Consider git annex
+* if you have lots of large files that need to exist in filesystem unfolded (eg. a music collection), git-big uses twice the size. Consider git annex
 
 ## Similar projects
 
