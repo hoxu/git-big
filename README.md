@@ -14,11 +14,15 @@ git big unlock <file>       # change symlink back to file (for editing)
 git big drop <file>         # remove local copy of file
 ```
 
-## Storage
+## How does it work?
 
-* .git/gig/objects/sha256
-* .git/refs/gig/sha256 -> object store
-* remote (folded, culled)
+When a file is added, it is:
+
+1. Written to git object store with `git hash-object -w`
+2. sha256-hashed, and a ref `refs/big/<sha256>` is written
+3. Moved to `GIT_DIR/big/objects/<sha256>` and write-protected
+4. A symlink is written in its place, pointing to the above
+5. The symlink is added to git index
 
 ## Tasks
 
