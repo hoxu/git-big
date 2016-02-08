@@ -24,11 +24,6 @@ When a file is added, it is:
 4. A symlink is written in its place, pointing to the above
 5. The symlink is added to git index
 
-## Tasks
-
-* mv support like in git annex
-* hook that removes .git/gig/objects/sha256 when no links to them exist in HEAD
-
 ## Pros and cons
 
 Pros:
